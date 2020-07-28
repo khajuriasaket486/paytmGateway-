@@ -1,0 +1,29 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>USER FORM</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+{#  <link rel="stylesheet" href="css/styles.css?v=1.0">#}
+</head>
+
+<body>
+    {% if i_form %}
+        <form method="POST" action="{% url 'handlepayment' %}">
+            {% csrf_token %}
+            {{ i_form }}
+            <button type="submit" name="submitbutton"> Submit </button>
+        </form>
+     {% else %}
+        {{ saved }}
+    {% endif %}
+
+
+
+{#  <script src="js/scripts.js"></script>#}
+</body>
+</html>
